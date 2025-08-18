@@ -102,7 +102,7 @@ Relationships:
   - A booking may have one or more payments.
 
 FEATURE BREAKDOWN
-The Airbnb Clone project includes the following main features, each designed to replicate core functionality of the Airbnb platform:
+  The Airbnb Clone project includes the following main features, each designed to replicate core functionality of the Airbnb platform:
 
 1. User Management
 This feature allows users to create accounts, log in, and manage their profiles securely. Users can register as hosts to list properties or as guests to book stays, making it the foundation for all interactions within the platform.
@@ -120,7 +120,7 @@ Guests can leave ratings and written feedback on properties they’ve stayed at.
 Guests can make secure payments for their bookings using supported payment methods (e.g., credit card, PayPal, etc.). This feature ensures that financial transactions are handled safely and transparently, providing a smooth booking and checkout experience.
 
 API SECURITY
-Security is a critical component of this project to ensure that sensitive data and financial transactions are protected. The following measures will be implemented to safeguard the platform:
+  Security is a critical component of this project to ensure that sensitive data and financial transactions are protected. The following measures will be implemented to safeguard the platform:
 
 1. Authentication
 
@@ -143,7 +143,7 @@ Rate limiting will be applied to API requests to prevent abuse such as brute-for
 Payment processing will be handled through trusted third-party providers (e.g., Stripe or PayPal) to avoid storing sensitive card details on the server. Only payment tokens will be managed within the application. This ensures that financial transactions are processed securely, reducing liability and protecting users’ financial information from fraud.
 
 CI/CD PIPELINE OVERVIEW
-A CI/CD (Continuous Integration and Continuous Deployment) pipeline is an automated workflow that streamlines the process of building, testing, and deploying the application. With each code update, the pipeline ensures that changes are automatically integrated, tested, and deployed, reducing manual effort and the risk of human error.
+  A CI/CD (Continuous Integration and Continuous Deployment) pipeline is an automated workflow that streamlines the process of building, testing, and deploying the application. With each code update, the pipeline ensures that changes are automatically integrated, tested, and deployed, reducing manual effort and the risk of human error.
 
 CI/CD is important for this project because it:
 
