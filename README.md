@@ -30,76 +30,76 @@ DATABASE DESIGN OVERVIEW
 1. Users: Represents both hosts (who create property listings) and guests (who make bookings).
 Important fields:
 
-  id – Unique identifier for each user
-  name – Full name of the user
-  email – Unique email address (used for login)
-  password_hash – Encrypted password for authentication
-  role – Defines whether the user is a host, guest, or both
+  - id – Unique identifier for each user
+  - name – Full name of the user
+  - email – Unique email address (used for login)
+  - password_hash – Encrypted password for authentication
+  - role – Defines whether the user is a host, guest, or both
 
 Relationships:
-  A user (host) can create multiple properties.
-  A user (guest) can make multiple bookings.
-  A user can leave multiple reviews.
-  A user can be linked to payments for their bookings.
+  - A user (host) can create multiple properties.
+  - A user (guest) can make multiple bookings.
+  - A user can leave multiple reviews.
+  - A user can be linked to payments for their bookings.
 
 2. Properties: Represents the listings (houses, apartments, rooms) created by hosts.
 Important fields:
 
-id – Unique identifier for the property
-user_id – ID of the host who owns the property (foreign key from Users)
-title – Short descriptive title of the property
-description – Detailed information about the property
-price_per_night – Cost to book the property per night
-location – Address or city where the property is located
+  - id – Unique identifier for the property
+  - user_id – ID of the host who owns the property (foreign key from Users)
+  - title – Short descriptive title of the property
+  - description – Detailed information about the property
+  - price_per_night – Cost to book the property per night
+  - location – Address or city where the property is located
 
 Relationships:
-A property belongs to a user (host).
-A property can have multiple bookings.
-A property can receive multiple reviews.
+  - A property belongs to a user (host).
+  - A property can have multiple bookings.
+  - A property can receive multiple reviews.
 
 3. Bookings: Represents reservations made by guests for properties.
 Important fields:
 
-id – Unique identifier for the booking
-user_id – ID of the guest who made the booking (foreign key from Users)
-property_id – ID of the property being booked (foreign key from Properties)
-start_date – Check-in date for the booking
-end_date – Check-out date for the booking
-status – Booking status (e.g., pending, confirmed, cancelled)
+  - id – Unique identifier for the booking
+  - user_id – ID of the guest who made the booking (foreign key from Users)
+  - property_id – ID of the property being booked (foreign key from Properties)
+  - start_date – Check-in date for the booking
+  - end_date – Check-out date for the booking
+  - status – Booking status (e.g., pending, confirmed, cancelled)
 
 Relationships:
 
-A booking belongs to one property.
-A booking is made by one user (guest).
-A booking can be linked to one or more payments.
+  - A booking belongs to one property.
+  - A booking is made by one user (guest).
+  - A booking can be linked to one or more payments.
 
 4. Reviews: Represents feedback left by guests after staying at a property.
 Important fields:
 
-id – Unique identifier for the review
-user_id – ID of the guest leaving the review (foreign key from Users)
-property_id – ID of the property being reviewed (foreign key from Properties)
-rating – Numeric rating (e.g., 1–5 stars)
-comment – Guest’s written feedback
+  - id – Unique identifier for the review
+  - user_id – ID of the guest leaving the review (foreign key from Users)
+  - property_id – ID of the property being reviewed (foreign key from Properties)
+  - rating – Numeric rating (e.g., 1–5 stars)
+  - comment – Guest’s written feedback
 
 Relationships:
 
-A review belongs to one property.
-A review is written by one user (guest).
+  - A review belongs to one property.
+  - A review is written by one user (guest).
 
 5. Payments: Represents financial transactions for bookings.
 Important fields:
 
-id – Unique identifier for the payment
-booking_id – ID of the booking the payment is tied to (foreign key from Bookings)
-amount – Amount paid
-payment_method – Method of payment (e.g., credit card, PayPal)
-status – Payment status (e.g., completed, pending, failed)
+  - id – Unique identifier for the payment
+  - booking_id – ID of the booking the payment is tied to (foreign key from Bookings)
+  - amount – Amount paid
+  - payment_method – Method of payment (e.g., credit card, PayPal)
+  - status – Payment status (e.g., completed, pending, failed)
 
 Relationships:
 
-A payment belongs to one booking.
-A booking may have one or more payments.
+  - A payment belongs to one booking.
+  - A booking may have one or more payments.
 
 FEATURE BREAKDOWN
 The Airbnb Clone project includes the following main features, each designed to replicate core functionality of the Airbnb platform:
@@ -147,13 +147,13 @@ A CI/CD (Continuous Integration and Continuous Deployment) pipeline is an automa
 
 CI/CD is important for this project because it:
 
-  Ensures consistent and reliable deployments.
-  Detects bugs early through automated testing.
-  Speeds up development by reducing manual setup steps.
-  Improves collaboration by allowing developers to push changes with confidence.
+  - Ensures consistent and reliable deployments.
+  - Detects bugs early through automated testing.
+  - Speeds up development by reducing manual setup steps.
+  - Improves collaboration by allowing developers to push changes with confidence.
 
 Tools for CI/CD in this project:
 
-  GitHub Actions – Automates workflows such as running tests, linting code, and deploying the application whenever new code is pushed.
-  Docker – Used to containerize the application, ensuring it runs consistently across different environments.
-  Deployment Platforms – Services like Heroku, AWS, or Vercel can be integrated into the pipeline for automatic deployment to staging or production environments.
+  - GitHub Actions – Automates workflows such as running tests, linting code, and deploying the application whenever new code is pushed.
+  - Docker – Used to containerize the application, ensuring it runs consistently across different environments.
+  - Deployment Platforms – Services like Heroku, AWS, or Vercel can be integrated into the pipeline for automatic deployment to staging or production environments.
