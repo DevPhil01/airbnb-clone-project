@@ -47,7 +47,7 @@ Important fields:
 Represents the listings (houses, apartments, rooms) created by hosts.  
 Important fields:  
 
-  - **id**– Unique identifier for the property  
+  - **id** – Unique identifier for the property  
   - **user_id** – ID of the host who owns the property (foreign key from Users)  
   - **title** – Short descriptive title of the property  
   - **description** – Detailed information about the property  
@@ -62,8 +62,8 @@ Important fields:
 ### 3. Bookings: Represents reservations made by guests for properties.  
 Important fields:  
 
-  **- id** – Unique identifier for the booking  
-  **- user_id** – ID of the guest who made the booking (foreign key from Users)  
+  - **id** – Unique identifier for the booking  
+  - **user_id** – ID of the guest who made the booking (foreign key from Users)  
   - **property_id** – ID of the property being booked (foreign key from Properties)  
   - **start_date** – Check-in date for the booking  
   - **end_date** – Check-out date for the booking  
@@ -121,10 +121,10 @@ Guests can leave ratings and written feedback on properties they’ve stayed at.
 ### 5. Payment System
 Guests can make secure payments for their bookings using supported payment methods (e.g., credit card, PayPal, etc.). This feature ensures that financial transactions are handled safely and transparently, providing a smooth booking and checkout experience.
 
-## API SECURITY
-- Security is a critical component of this project to ensure that sensitive data and financial transactions are protected. The following measures will be implemented to safeguard the platform:
+## API SECURITY  
+Security is a critical component of this project to ensure that sensitive data and financial transactions are protected. The following measures will be implemented to safeguard the platform:  
 
-### 1. Authentication
+### 1. Authentication  
 
 All API endpoints will be secured with authentication mechanisms such as JWT (JSON Web Tokens) or session-based authentication. This ensures that only registered and verified users can access protected resources, such as managing bookings or adding properties. Authentication prevents unauthorized access, protecting user data like emails, passwords, and booking history from malicious actors.
 
