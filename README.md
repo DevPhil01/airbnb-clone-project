@@ -28,13 +28,14 @@ The backend for the Airbnb Clone project is designed to provide a robust and sca
 
 ## DATABASE DESIGN OVERVIEW
 ### 1. Users: Represents both hosts (who create property listings) and guests (who make bookings).
+
 Important fields:
 
-  - **id**– Unique identifier for each user
-  - **name** – Full name of the user
-  - **email**– Unique email address (used for login)
-  - **password_hash** – Encrypted password for authentication
-  - **role** – Defines whether the user is a host, guest, or both
+   **id**– Unique identifier for each user
+   **name** – Full name of the user
+   **email**– Unique email address (used for login)
+   **password_hash** – Encrypted password for authentication
+   **role** – Defines whether the user is a host, guest, or both
 
 Relationships:
   - A user (host) can create multiple properties.
