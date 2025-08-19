@@ -1,40 +1,40 @@
 # airbnb-clone-project
-a clone of the airbnb app
+**a clone of the airbnb app**
 The backend for the Airbnb Clone project is designed to provide a robust and scalable foundation for managing user interactions, property listings, bookings, and payments. This backend will support various functionalities required to mimic the core features of Airbnb, ensuring a smooth experience for users and hosts.
 
 ##PROJECT GOALS
-1. User Management: Implement a secure system for user registration, authentication, and profile management.
-2. Property Management: Develop features for property listing creation, updates, and retrieval.
-3. Booking System: Create a booking mechanism for users to reserve properties and manage booking details.
-4. Payment Processing: Integrate a payment system to handle transactions and record payment details.
-5. Review System: Allow users to leave reviews and ratings for properties.
-6. Data Optimization: Ensure efficient data retrieval and storage through database optimizations.
+**1. User Management:** Implement a secure system for user registration, authentication, and profile management.
+**2. Property Management:** Develop features for property listing creation, updates, and retrieval.
+**3. Booking System:** Create a booking mechanism for users to reserve properties and manage booking details.
+**4. Payment Processing:** Integrate a payment system to handle transactions and record payment details.
+**5. Review System:** Allow users to leave reviews and ratings for properties.
+**6. Data Optimization:** Ensure efficient data retrieval and storage through database optimizations.
 
 ##TECHNOLOGY STACK
-1. Django: A high-level Python web framework used for building the RESTful API.
-2. Django REST Framework: Provides tools for creating and managing RESTful APIs.
-3. PostgreSQL: A powerful relational database used for data storage.
-4. GraphQL: Allows for flexible and efficient querying of data.
-5. Celery: For handling asynchronous tasks such as sending notifications or processing payments.
-6. Redis: Used for caching and session management.
-7. Docker: Containerization tool for consistent development and deployment environments.
-8. CI/CD Pipelines: Automated pipelines for testing and deploying code changes.
+**1. Django:** A high-level Python web framework used for building the RESTful API.
+**2. Django REST Framework:** Provides tools for creating and managing RESTful APIs.
+**3. PostgreSQL:** A powerful relational database used for data storage.
+**4. GraphQL**: Allows for flexible and efficient querying of data.
+**5. Celery:** For handling asynchronous tasks such as sending notifications or processing payments.
+**6. Redis:** Used for caching and session management.
+**7. Docker:** Containerization tool for consistent development and deployment environments.
+**8. CI/CD Pipelines:** Automated pipelines for testing and deploying code changes.
 
 ##TEAM ROLES
-1. Backend Developer: Responsible for implementing API endpoints, database schemas, and business logic.
-2. Database Administrator: Manages database design, indexing, and optimizations.
-3. DevOps Engineer: Handles deployment, monitoring, and scaling of the backend services.
-4. QA Engineer: Ensures the backend functionalities are thoroughly tested and meet quality standards.
+**1. Backend Developer:** Responsible for implementing API endpoints, database schemas, and business logic.
+**2. Database Administrator:** Manages database design, indexing, and optimizations.
+**3. DevOps Engineer:** Handles deployment, monitoring, and scaling of the backend services.
+**4. QA Engineer:** Ensures the backend functionalities are thoroughly tested and meet quality standards.
 
 ##DATABASE DESIGN OVERVIEW
 ###1. Users: Represents both hosts (who create property listings) and guests (who make bookings).
 Important fields:
 
-  - id – Unique identifier for each user
-  - name – Full name of the user
-  - email – Unique email address (used for login)
-  - password_hash – Encrypted password for authentication
-  - role – Defines whether the user is a host, guest, or both
+  -**id**– Unique identifier for each user
+  - **name** – Full name of the user
+  - **email**– Unique email address (used for login)
+  - **password_hash** – Encrypted password for authentication
+  - **role** – Defines whether the user is a host, guest, or both
 
 Relationships:
   - A user (host) can create multiple properties.
@@ -42,7 +42,8 @@ Relationships:
   - A user can leave multiple reviews.
   - A user can be linked to payments for their bookings.
 
-###2. Properties: Represents the listings (houses, apartments, rooms) created by hosts.
+###2. Properties: 
+Represents the listings (houses, apartments, rooms) created by hosts.
 Important fields:
 
   - id – Unique identifier for the property
@@ -60,8 +61,8 @@ Relationships:
 ###3. Bookings: Represents reservations made by guests for properties.
 Important fields:
 
-  - id – Unique identifier for the booking
-  - user_id – ID of the guest who made the booking (foreign key from Users)
+  **- id** – Unique identifier for the booking
+  **- user_id** – ID of the guest who made the booking (foreign key from Users)
   - property_id – ID of the property being booked (foreign key from Properties)
   - start_date – Check-in date for the booking
   - end_date – Check-out date for the booking
