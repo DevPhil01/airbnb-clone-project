@@ -1,6 +1,6 @@
 
 # DATABASE DESIGN OVERVIEW
-  The database schema is designed to support the key functionalities of the Airbnb Clone project. Below are the core entities, their essential fields, and how they relate to each other:
+  The database schema is is designed to support the key functionalities of the Airbnb Clone project. Below are the core entities, their essential fields, and how they relate to each other:
 
 ## 1. User
     Stores account information for all users, including guests, hosts, and admins.
