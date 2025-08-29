@@ -156,3 +156,73 @@ Enables communication between guests and hosts.
   * property_id in Property and Booking.
 
   * booking_id in Booking and Payment.
+ 
+## ERD Diagram
+ 
+erDiagram
+  USER {
+    UUID user_id PK "Indexed"
+    VARCHAR first_name
+    VARCHAR last_name
+    VARCHAR email "Unique"
+    VARCHAR password_hash
+    VARCHAR? phone_number
+    ENUM role "guest, host, admin"
+    TIMESTAMP created_at
+  }
+
+  PROPERTY {
+    UUID property_id PK "Indexed"
+    UUID host_id FK
+    VARCHAR name
+    TEXT description
+    VARCHAR location
+    DECIMAL price_per_night
+    TIMESTAMP created_at
+    TIMESTAMP updated_at
+  }
+
+  BOOKING {
+    UUID booking_id PK "Indexed"
+    UUID property_id FK
+    UUID user_id FK
+    DATE start_date
+    DATE end_date
+    DECIMAL total_price
+    ENUM status "pending, confirmed, canceled"
+    TIMESTAMP created_at
+  }
+
+  PAYMENT {
+    UUID payment_id PK "Indexed"
+    UUID booking_id FK
+    DECIMAL amount
+    TIMESTAMP payment_date
+    ENUM payment_method "credit_card, paypal, stripe"
+  }
+
+  REVIEW {
+    UUID review_id PK "Indexed"
+    UUID property_id FK
+    UUID user_id FK
+    INTEGER rating "1-5"
+    TEXT comment
+    TIMESTAMP created_at
+  }
+
+  MESSAGE {
+    UUID message_id PK "Indexed"
+    UUID sender_id FK
+    UUID recipient_id FK
+    TEXT message_body
+    TIMESTAMP sent_at
+  }
+
+  USER ||--o{ PROPERTY : "hosts"
+  USER ||--o{ BOOKING : "makes"
+  USER ||--o{ REVIEW : "writes"
+  USER ||--o{ MESSAGE : "sends/receives"
+  PROPERTY ||--o{ BOOKING : "books"
+  PROPERTY ||--o{ REVIEW : "is reviewed"
+  BOOKING ||--o{ PAYMENT : "paid by"
+
