@@ -1,1 +1,29 @@
+# DATABASE DESIGN OVERVIEW
+  The database schema is designed to support the key functionalities of the Airbnb Clone project. Below are the core entities, their essential fields, and how they relate to each other:
+
+## 1. User
+    Stores account information for all users, including guests, hosts, and admins.
+
+    **Important Fields:**
+
+      * **user_id (UUID, Primary Key, Indexed) –** Unique identifier for each user.
+      
+      * **first_name, last_name (VARCHAR, NOT NULL) –** User's full name.
+      
+      * **email (UNIQUE, NOT NULL) –** Used for login and identification.
+      
+      * **password_hash (NOT NULL) –** Securely hashed password.
+      
+      * **role (ENUM: guest, host, admin) –** Defines the user’s role in the system.
+      
+      * **created_at (TIMESTAMP, DEFAULT CURRENT_TIMESTAMP) –** Account creation date.
+
+    **Relationships:**
+
+    * A user (host) can own multiple properties.
+    
+    * A user (guest) can make multiple bookings.
+    
+    * A user can send and receive messages, write reviews, and make payments for bookings.
+  
 
